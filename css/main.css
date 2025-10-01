@@ -59,13 +59,16 @@
   line-height:32px;
   background:#fff;
   text-align:center;
-  transition:background-color 0.3s, color 0.3s, border-color 0.3s;
+  transition:0.3s;
 }
 .more_btn a:hover{
   border:1px solid #E41937;
   background-color:#E41937;
   color:#fff;
 }
+
+/* ========== 공통 최적화 ========== */
+:is(.mySwiper2, .mySwiper3){position:relative; overflow:visible;}
 
 /* ========== 2-1. 메뉴 슬라이드 ========== */
 .mySwiper2{position:relative; overflow:visible;}
@@ -77,18 +80,23 @@
 /* ========== 3. 이벤트 ========== */
 .event_slide{padding-top:50px;}
 .mySwiper3{position:relative;}
-.mySwiper3 .swiper-slide{display:flex;}
-.mySwiper3 figure{width:330px; height:200px; margin:0 auto;}
+.mySwiper3 .swiper-slide{display:flex; justify-content: center;}
+.mySwiper3 figure{width:330px; height:200px; margin:0 20px;}
 .mySwiper3 img{width:100%; height:100%;}
 .mySwiper3 figure:hover img{
   filter:brightness(0.7);
-  transition:filter 0.3s;
+  transition:0.3s;
 }
 .mySwiper3 .swiper-pagination-bullet{
   position:relative;
   bottom:-35px;
   background-color:#E41937;
-  transition:transform 0.5s, background-color 0.5s;
+  transition:0.5s;
+}
+
+.mySwiper3 .swiper-pagination-bullet-active{
+  position:relative;
+  width:30px; border-radius:10px;
 }
 
 /* ========== 4. 뉴스 ========== */
@@ -105,7 +113,6 @@
   background-color:#ccc;
   padding:20px;
   position:relative;
-  overflow:hidden;
 }
 #g_wrap article a:hover{text-decoration:underline;}
 #g_wrap .img_container{
@@ -115,8 +122,7 @@
 }
 #g_wrap img{
   width:100%; height:100%;
-  transition:transform 0.3s;
-  will-change:transform;
+  transition:0.3s;
 }
 #g_wrap article a:hover img{transform:scale(1.1);}
 #g_wrap h3{padding-top:10px; font-size:18px;}
@@ -135,6 +141,7 @@
   width:290px; height:290px;
   border:1px solid #fff;
   border-radius:50%;
+  transition:0.5s;
 }
 .content_wrap > ul > li:hover{border:1px solid #6a1820;}
 
@@ -149,46 +156,68 @@
 .content_wrap .circle a img{
   width:50px;
   padding-bottom:20px;
-  transition:transform 0.5s;
-  will-change:transform;
+  transition:0.5s;
 }
 .content_wrap > ul > li:hover img{transform:translateY(-15px) scale(1.2);}
 
 /* 말풍선 */
-.content_wrap > ul > li:hover::before{
+.content_wrap > ul > li::before{
   content:"";
-  display:block;
+  opacity:0;
   width:52px; height:32px;
   background-image:url('../images/tri.png');
   position:absolute;
   bottom:-46px;
   z-index:10;
+  transition:0.3s;
+  left:170px;
 }
-.content_wrap > ul > li:first-child:hover::before{left:170px;}
-.content_wrap > ul > li:nth-child(2):hover::before{left:580px;}
-.content_wrap > ul > li:nth-child(3):hover::before{right:170px;}
+.content_wrap > ul > li:nth-child(2)::before{
+  content:"";
+  opacity:0;
+  width:52px; height:32px;
+  background-image:url('../images/tri.png');
+  position:absolute;
+  bottom:-46px;
+  z-index:10;
+  transition:0.3s;
+  left:580px;
+}
+.content_wrap > ul > li:nth-child(3)::before{
+  content:"";
+  opacity:0;
+  width:52px; height:32px;
+  background-image:url('../images/tri.png');
+  position:absolute;
+  bottom:-46px;
+  z-index:10;
+  transition:0.3s;
+  left:990px;
+}
+.content_wrap > ul > li:hover::before{opacity:1;}
 
 .content_wrap .circle a span{
   display:block;
   color:#fff;
   font-size:18px;
   transition: 0.5s;
-  will-change:transform;
 }
 
 .caption{
+  display:flex;
   width:1200px; height:150px;
   border:1px solid #6A1820;
   position:absolute;
   top:325px; left:0;
   background-color:#fff;
-  z-index:1;
-  border-radius:100px;
-  display:none;
-  padding:30px 80px;
+  border-radius:40px;
   font-size:16px;
+  align-items:center;
+  padding:0 30px;
+  opacity:0;
+  transition:0.3s;
 }
-.content_wrap > ul > li:hover .caption{display:block;}
+.content_wrap > ul > li:hover .caption{opacity:1;}
 
 /* 말풍선 문구 애니메이션 */
 .content_wrap > ul > li span{transition: 0.5s;}
@@ -196,5 +225,3 @@
   transform:translateY(-5px) scale(1.06);
 }
 
-/* ========== 공통 최적화 ========== */
-:is(.mySwiper2, .mySwiper3){position:relative; overflow:visible;}
