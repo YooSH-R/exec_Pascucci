@@ -359,13 +359,9 @@
               <figure>
                 <a href="#" title=""><img src="./images/event_05.jpg" alt="이벤트"></a>
               </figure>
-            </div>
-            <div class="swiper-slide">
               <figure>
                 <a href="#" title=""><img src="./images/event_06.jpg" alt="이벤트"></a>
               </figure>
-            </div>
-            <div class="swiper-slide">
               <figure>
                 <a href="#" title=""><img src="./images/event_07.jpg" alt="이벤트"></a>
               </figure>
@@ -374,13 +370,9 @@
               <figure>
                 <a href="#" title=""><img src="./images/event_08.jpg" alt="이벤트"></a>
               </figure>
-            </div>
-            <div class="swiper-slide">
               <figure>
                 <a href="#" title=""><img src="./images/event_09.jpg" alt="이벤트"></a>
               </figure>
-            </div>
-            <div class="swiper-slide">
               <figure>
                 <a href="#" title=""><img src="./images/event_10.jpg" alt="이벤트"></a>
               </figure>
@@ -391,9 +383,8 @@
           <div class="swiper-button-prev"></div>
 
           <div class="swiper-pagination">
-            <div class="swiper-pagination-bullet"></div>
-            <div class="swiper-pagination-bullet"></div>
-            <div class="swiper-pagination-bullet"></div>
+          <span class="swiper-pagination-bullet"></span>
+          <span class="swiper-pagination-bullet"></span>
           </div>
         </div>
       </div>
@@ -624,8 +615,8 @@
 
   // ===== 3) EVENT 슬라이드 =====
   const swiperEvent = new Swiper('.mySwiper3', {
-    slidesPerView: 3,
-    spaceBetween: -50,
+    slidesPerView: 1,
+    spaceBetween: 30,
     cssMode: true,       // 원래 동작 유지
     loop: true,
     autoplay: {

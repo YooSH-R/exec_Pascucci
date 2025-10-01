@@ -76,7 +76,8 @@
 
 /* ========== 3. 이벤트 ========== */
 .event_slide{padding-top:50px;}
-.mySwiper3{position:relative; overflow:visible;}
+.mySwiper3{position:relative;}
+.mySwiper3 .swiper-slide{display:flex;}
 .mySwiper3 figure{width:330px; height:200px; margin:0 auto;}
 .mySwiper3 img{width:100%; height:100%;}
 .mySwiper3 figure:hover img{
@@ -171,7 +172,7 @@
   display:block;
   color:#fff;
   font-size:18px;
-  transition:transform 0.5s;
+  transition: 0.5s;
   will-change:transform;
 }
 
@@ -190,7 +191,7 @@
 .content_wrap > ul > li:hover .caption{display:block;}
 
 /* 말풍선 문구 애니메이션 */
-.content_wrap > ul > li span{transition:transform 0.5s;}
+.content_wrap > ul > li span{transition: 0.5s;}
 .content_wrap > ul > li:hover span{
   transform:translateY(-5px) scale(1.06);
 }
