@@ -1,0 +1,261 @@
+@charset "utf-8";
+
+.main_visual{
+  position:relative;
+  width:100%; height:800px; /* vh: 높이 상대단위*/
+  overflow: hidden;
+}
+
+.main_visual .swiper{
+  width:100%; height:100%;
+}
+
+.main_visual h2{display: none;}
+.main_visual img{
+  display:block;
+  width:100%;
+}
+
+#cont1, #cont2, #cont3, #cont4, #cont5{
+  width:1200px;
+  margin:20px auto; /* 화면 중앙에 콘텐츠 배치 */
+  padding:40px 0;
+}
+
+/* 2콘텐츠 파스쿠찌 스토리 */
+#cont1{padding:30px 0px; height:700px;}
+.c_title{font-size:30px; line-height:40px;}
+.sub_title{
+  font-size:16px;
+  font-family:'바탕체', sans-serif;
+}
+.c_title, .sub_title, .tab_menu{text-align:center;}
+.tab_menu{padding-top:60px;}
+
+/* 탭메뉴 서식 */
+.tab_menu .menu_btn{
+  display:inline-block;
+  width:100px;
+  margin: 0 20px 50px 20px;
+  padding:6px 0;
+  font-size:16px;
+  border-radius:20px;
+  cursor:pointer;
+  background-color:#211613;
+  color:#faf9f9;
+}
+
+.tab_menu input[type=radio]{display:none;}
+.tab_menu input[type=radio]:checked + .menu_btn{
+  background-color:#f00;
+}
+
+.season_m, .hit_m{display:none;}
+.tab_menu #tab_01:checked ~ .season_m{display:block;}
+.tab_menu #tab_02:checked ~ .hit_m{display:block;}
+
+/* 더보기 */
+.more_btn a{
+  display:block;
+  width:130px; height:32px; margin: 70px auto 0 auto;
+  border:1px solid #211613;
+  box-sizing:border-box;
+  color:#211613;
+  font-size:14px;
+  line-height:32px;
+  background:#fff;
+  transition:0.3s;
+  text-align:center;
+}
+
+.more_btn a:hover{
+  border:1px solid #E41937;
+  background-color:#E41937;
+  color:#fff;
+}
+
+/* 콘텐츠1 파스쿠찌 메뉴 */
+.mySwiper2{position:relative; overflow: visible;}
+.mySwiper2 figure{
+  width:220px; height:250px;
+  margin:0 auto;
+}
+.mySwiper2 .swiper-slide{overflow: visible;height:290px;}
+.mySwiper2 figure img{width:100%;}
+.swiper-button-next, .swiper-button-prev{color:#E41937;}
+
+
+
+/* 콘텐츠2 파스쿠찌 이벤트 */
+.event_slide{padding-top:50px;}
+.mySwiper3{
+  position:relative;
+  overflow: visible;
+}
+
+.mySwiper3 figure{
+  width:330px; height:200px;
+  margin:0 auto;
+}
+.mySwiper3 img{width:100%; height:100%;}
+.mySwiper3 figure:hover img{filter:brightness(0.7)}
+.mySwiper3 .swiper-pagination-bullet{
+  position:relative;
+  bottom:-35px;
+  transition:0.5s;
+  background-color:#E41937;
+}
+
+/* pagination에 효과주기
+.mySwiper3 .swiper-pagination-bullet-active{
+  position:relative;
+  width:30px; border-radius: 10px;
+} */
+
+/* 콘텐츠3 파스쿠찌 뉴스 */
+#cont2{height:500px;}
+#g_wrap{
+  display:grid; grid-gap:10px;
+  grid-template-columns:repeat(2, auto);
+  grid-template-rows:repeat(2, auto);
+  padding-top:50px;
+}
+
+#g_wrap article a{
+  display:flex;
+  background-color: #ccc;
+  padding:20px;
+  position:relative;
+  overflow: hidden;
+}
+
+#g_wrap article a:hover{
+  text-decoration:underline;
+}
+#g_wrap .img_container{
+  width:300px;
+  height:200px;
+  margin-right:10px;
+  overflow: hidden;
+}
+
+#g_wrap img{
+  width:100%;
+  height:100%;
+  transition:0.3s;
+}
+
+
+#g_wrap article a:hover img{
+  transform:scale(1.1)
+}
+
+#g_wrap h3{
+  padding-top:10px;
+  font-size:18px;
+}
+
+#g_wrap p{
+  padding-top:20px;
+  font-size:14px;
+}
+
+#g_wrap span{
+  position:absolute;
+  right:10px;
+  bottom:10px;
+}
+
+/* 콘텐츠4 파스쿠찌 스토리 */
+#cont4{height:620px;}
+.content_wrap{
+  margin-top:60px;
+  position:relative;
+}
+
+.content_wrap > ul{
+  display:flex;
+  justify-content:space-around;
+}
+
+
+.content_wrap > ul > li{
+  width:290px; height:290px;
+  border:1px solid #fff;
+  border-radius:50%;
+}
+
+.content_wrap > ul > li:hover{
+  border:1px solid #6a1820;
+}
+
+.content_wrap  .circle{
+  width:280px; height:280px;
+  border-radius:50%;
+  background-color:#6A1820;
+  text-align:center;
+  transform:translate(5px, 5px);
+}
+
+.content_wrap  .circle a{
+  display:inline-block;
+  padding-top:80px;
+}
+
+.content_wrap  .circle a img{
+  width:50px;
+  padding-bottom: 20px;
+  transition:0.5s;
+}
+
+.content_wrap > ul > li:hover img{
+  transform:translateY(-15px) scale(1.2);
+}
+
+.content_wrap > ul > li:hover::before{
+  content:"";
+  display:block;
+  width:52px;height:32px;
+  background-image:url('../images/tri.png');
+  position:absolute;
+  bottom:-46px;
+  z-index:10;
+}
+.content_wrap > ul > li:first-child:hover::before{
+  left:170px;
+}
+.content_wrap > ul > li:nth-child(2):hover::before{
+  left:580px;
+}
+.content_wrap > ul > li:nth-child(3):hover::before{
+  right:170px;
+}
+
+.content_wrap  .circle a span{
+  display:block;
+  color:#fff;
+  font-size:18px;
+}
+
+.caption{
+  width:1200px; height:150px;
+  border:1px solid #6A1820;
+  position:absolute;
+  top:325px; left:0px;
+  background-color: #fff;
+  z-index:1;
+  border-radius:100px;
+  display:none;
+  padding:30px 80px;
+  font-size:16px;
+}
+
+.content_wrap > ul > li:hover .caption{
+  display:block;
+}
+
+/* 말풍선 문구와 애니메이션 */
+.content_wrap > ul > li span{transition:0.5s;}
+.content_wrap > ul > li:hover span{
+  transform:translateY(-5px) scale(1.06);
+}
